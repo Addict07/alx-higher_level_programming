@@ -1,19 +1,21 @@
 #!/usr/bin/python3
+"""Define a class Square."""
+
 
 class Square:
-    """Represent a square."""
+    """Represent a square Class"""
 
     def __init__(self, size=0):
-        """Initialize a new square.
+        """Initialize a square.
 
         Args:
-            size (int): The size of the new square.
+            size (int): The size of the fresh square.
         """
         self.size = size
 
     @property
     def size(self):
-        """Get/set the current size of the square."""
+        """Gets the current size of the square."""
         return (self.__size)
 
     @size.setter
