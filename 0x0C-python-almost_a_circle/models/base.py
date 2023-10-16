@@ -1,27 +1,24 @@
 #!/usr/bin/python3
 
-"""Defines a base model class."""
+"""The code represents base model class."""
 import json
 import csv
 import turtle
 
 
 class Base:
-    """Base model.
-
-    This Represents the "base" for all other classes in project 0x0C*.
-
+    """A base class.
     Private Class Attributes:
-        __nb_object (int): Number of instantiated Bases.
+        __nb_object (int): This is the number of instantiated Bases.
     """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Initialize a new Base.
+        """A new Base Class is initialized
 
         Args:
-            id (int): The identity of the new Base.
+            id (int): ID of a new Base.
         """
         if id is not None:
             self.id = id
@@ -31,10 +28,10 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Return the JSON serialization of a list of dicts.
+        """ This is a JSON serialization of a list of dicts.
 
         Args:
-            list_dictionaries (list): A list of dictionaries.
+            list_dictionaries (list): This is a list of dictionaries.
         """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
@@ -42,10 +39,10 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Write the JSON serialization of a list of objects to a file.
+        """Save a list of objects to a file.
 
         Args:
-            list_objs (list): A list of inherited Base instances.
+            list_objs (list): The list of inherited Base instances.
         """
         filename = cls.__name__ + ".json"
         with open(filename, "w") as jsonfile:
@@ -57,10 +54,10 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Return the deserialization of a JSON string.
+        """Return string from json.
 
         Args:
-            json_string (str): A JSON str representation of a list of dicts.
+            json_string (str): A JSON string of a list of dicts.
         Returns:
             If json_string is None or empty - an empty list.
             Otherwise - the Python list represented by json_string.
@@ -71,10 +68,10 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Return a class instantied from a dictionary of attributes.
+        """This returns a class from a dictionary of attributes.
 
         Args:
-            **dictionary (dict): Key/value pairs of attributes to initialize.
+            **dictionary (dict): This is a Key-Value pairs of attributes to initialize.
         """
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
@@ -86,9 +83,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Return a list of classes instantiated from a file of JSON strings.
-
-        Reads from `<cls.__name__>.json`.
+        """This returns a list of classes instantiated from a file of JSON strings.
 
         Returns:
             If the file does not exist - an empty list.
@@ -104,10 +99,10 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """Write the CSV of a list of objects to a file.
+        """This saves the CSV of a list of objects to a file.
 
         Args:
-            list_objs (list): A list of inherited Base instances.
+            list_objs (list): This is a list of inherited Base instances.
         """
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as csvfile:
@@ -124,7 +119,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """Return a list of classes instantiated from a CSV file.
+        """This returns a list of classes instantiated from a CSV file.
 
         Returns:
             When the file does not exist - an empty list.
@@ -146,7 +141,7 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """Draw Rectangles and Squares using the turtle module.
+        """This draws rectangles and Squares using the turtle module.
 
         Args:
             list_rectangles (list): A list of Rectangle objects to draw.
